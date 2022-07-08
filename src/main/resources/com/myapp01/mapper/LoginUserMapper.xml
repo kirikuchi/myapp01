@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myapp01.mapper.LoginUserMapper">
+	<select id="findByUserId" resultType="com.myapp01.entity.LoginUserEntity" flushCache="true">
+		select * from login_user where user_id = #{userId}
+	</select>
+</mapper>
