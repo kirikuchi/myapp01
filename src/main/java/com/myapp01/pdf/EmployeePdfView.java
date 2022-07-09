@@ -25,12 +25,12 @@ public class EmployeePdfView extends AbstractPdfView {
 			HttpServletResponse response) throws Exception {
 
 		// get font path for local
-		String currentPath = this.getClass().getClassLoader().getResource(".").toString();
-		currentPath = currentPath.replaceAll("file:", "");
-		final String fontFile = currentPath + "com/myapp01/pdf/ipaexg.ttf";
+//		String currentPath = this.getClass().getClassLoader().getResource(".").toString();
+//		currentPath = currentPath.replaceAll("file:", "");
+//		final String fontFile = currentPath + "com/myapp01/pdf/ipaexg.ttf";
 		
 		// get font path for heroku
-//		final String fontFile = "/app/src/main/java/com/myapp01/pdf/ipaexg.ttf";
+		final String fontFile = "/app/src/main/java/com/myapp01/pdf/ipaexg.ttf";
 		
 		BaseFont baseFont = BaseFont.createFont(fontFile, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
 		Font font = new Font(baseFont, 10, Font.NORMAL);
