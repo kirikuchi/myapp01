@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myapp01.mapper.EmployeeMapper">
+	<select id="search"
+		parameterType="com.myapp01.entity.EmployeeEntity"
+		resultType="com.myapp01.entity.EmployeeEntity" flushCache="true">
+		select
+			*
+		from
+			employee
+			<where>
+				<if test="empId != null and empId != ''">
+					and emp_id = #{empId}
+				</if>
+				<if test="lastName != null and lastName != ''">
+					and last_name = #{lastName}
+				</if>
+				<if test="fastName != null and fastName != ''">
+					and fast_name = #{fastName}
+				</if>
+				<if test="lastNameKana != null and lastNameKana != ''">
+					and last_name_kana = #{lastNameKana}
+				</if>
+				<if test="fastNameKana != null and fastNameKana != ''">
+					and fast_name_kana = #{fastNameKana}
+				</if>
+				<if test="gender != null and gender != ''">
+					and gender = #{gender}
+				</if>
+				<if test="birthday != null and birthday != ''">
+					and birthday = #{birthday}
+				</if>
+				<if test="bloodType != null and bloodType != ''">
+					and blood_type = #{bloodType}
+				</if>
+			</where>
+			order by emp_id
+	</select>
+
+	<select id="searchById"
+		parameterType="java.lang.String"
+		resultType="com.myapp01.entity.EmployeeEntity" flushCache="true">
+		select
+			*
+		from
+			employee
+		where emp_id = #{empId}
+	</select>
+	
+	<select id="updateById"
+		parameterType="com.myapp01.entity.EmployeeEntity"
+		resultType="com.myapp01.entity.EmployeeEntity" flushCache="true">
+		update employee
+		set
+			 EMP_ID = #{empId}
+			,LAST_NAME = #{lastName}
+			,FAST_NAME = #{fastName}
+			,LAST_NAME_KANA = #{lastNameKana}
+			,FAST_NAME_KANA = #{fastNameKana}
+			,GENDER = #{gender}
+			,BIRTHDAY = #{birthday}
+			,BLOOD_TYPE = #{bloodType}
+		where emp_id = #{empId}
+	</select>
+</mapper>

@@ -28,7 +28,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/js/**", "/css/**", "/login").permitAll().anyRequest().authenticated().and()
 				.formLogin().loginPage("/login").loginProcessingUrl("/signin").usernameParameter("username")
-				.passwordParameter("password").defaultSuccessUrl("/list", true).failureUrl("/login?error=true").and().logout()
+				.passwordParameter("password").defaultSuccessUrl("/list/init", true).failureUrl("/login?error=true").and().logout()
 				.logoutRequestMatcher(new AntPathRequestMatcher("/logout**"))
 				.logoutSuccessUrl("/login")
 				.permitAll();
