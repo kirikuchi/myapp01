@@ -14,8 +14,9 @@ public class EmployeeListForm implements Serializable {
 	private String gender;
 	private String birthday;
 	private String bloodType;
+	private String hdnScrollTop;
 	private List<EmployeeEntity>employeeList;
-	
+
 	public String getEmpId() {
 		return empId;
 	}
@@ -63,6 +64,12 @@ public class EmployeeListForm implements Serializable {
 	}
 	public void setBloodType(String bloodType) {
 		this.bloodType = bloodType;
+	}
+	public String getHdnScrollTop() {
+		return hdnScrollTop;
+	}
+	public void setHdnScrollTop(String hdnScrollTop) {
+		this.hdnScrollTop = hdnScrollTop;
 	}
 	public List<EmployeeEntity> getEmployeeList() {
 		return employeeList;

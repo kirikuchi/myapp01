@@ -26,9 +26,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	// URLパス毎に制御
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/js/**", "/css/**", "/login").permitAll().anyRequest().authenticated().and()
+		http.authorizeRequests().antMatchers("/js/**", "/css/**", "/login", "/eroor").permitAll().anyRequest().authenticated().and()
 				.formLogin().loginPage("/login").loginProcessingUrl("/signin").usernameParameter("username")
-				.passwordParameter("password").defaultSuccessUrl("/list/init", true).failureUrl("/login?error=true").and().logout()
+				.passwordParameter("password").defaultSuccessUrl("/list/init", true).failureForwardUrl("/eroor").and().logout()
 				.logoutRequestMatcher(new AntPathRequestMatcher("/logout**"))
 				.logoutSuccessUrl("/login")
 				.permitAll();

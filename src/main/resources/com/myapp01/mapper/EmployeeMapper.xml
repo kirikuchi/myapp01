@@ -15,16 +15,16 @@
 					and emp_id = #{empId}
 				</if>
 				<if test="lastName != null and lastName != ''">
-					and last_name = #{lastName}
+					and last_name like CONCAT('%', #{lastName}, '%')
 				</if>
 				<if test="fastName != null and fastName != ''">
-					and fast_name = #{fastName}
+					and fast_name like CONCAT('%', #{fastName}, '%')
 				</if>
 				<if test="lastNameKana != null and lastNameKana != ''">
-					and last_name_kana = #{lastNameKana}
+					and last_name_kana like CONCAT('%', #{lastNameKana}, '%')
 				</if>
 				<if test="fastNameKana != null and fastNameKana != ''">
-					and fast_name_kana = #{fastNameKana}
+					and fast_name_kana like CONCAT('%', #{fastNameKana}, '%')
 				</if>
 				<if test="gender != null and gender != ''">
 					and gender = #{gender}

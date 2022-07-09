@@ -23,6 +23,10 @@ public class EmployeeEditService {
 	public void update (EmployeeEditForm employeeEditForm) {
 		EmployeeEntity employeeEntity = new EmployeeEntity();
 		BeanUtils.copyProperties(employeeEditForm, employeeEntity);
-		employeeMapper.updateById(employeeEntity);
+		try {
+			employeeMapper.updateById(employeeEntity);
+		} catch (Exception e) {
+			// 更新失敗時はスルーして一覧画面に戻る
+		}
 	}
 }

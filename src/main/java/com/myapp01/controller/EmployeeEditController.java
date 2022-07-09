@@ -3,6 +3,8 @@ package com.myapp01.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.myapp01.form.EmployeeEditForm;
+import com.myapp01.form.EmployeeListForm;
 import com.myapp01.service.EmployeeEditService;
 
 @Controller
@@ -20,8 +23,15 @@ public class EmployeeEditController {
 	@Autowired
 	EmployeeEditService employeeEditService;
 
+	@Autowired
+	HttpSession session; 
+	
 	@PostMapping("/edit/init")
-	private String init(@RequestParam("hdnSelectedEmpId") String hdnSelectedEmpId, Model model) {
+	private String init(@RequestParam("hdnSelectedEmpId") String hdnSelectedEmpId, @RequestParam("hdnScrollTop") String hdnScrollTop, Model model) {
+		EmployeeListForm employeeListForm = (EmployeeListForm)session.getAttribute("employeeListForm");
+		employeeListForm.setHdnScrollTop(hdnScrollTop);
+		session.setAttribute("employeeListForm", employeeListForm);
+		
 		EmployeeEditForm employeeEditForm = new EmployeeEditForm();
 		employeeEditService.searchById(hdnSelectedEmpId, employeeEditForm);
 		

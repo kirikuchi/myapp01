@@ -8,28 +8,15 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * Web アプリケーション全体のエラーコントローラー。 ErrorController インターフェースの実装クラス。
- */
 @Controller
 @RequestMapping("/error") // エラーページへのマッピング
 public class SimpleErrorController implements ErrorController {
-	/**
-	 * レスポンス用の ModelAndView オブジェクトを返す。
-	 *
-	 * @param req リクエスト情報
-	 * @param mav レスポンス情報
-	 * @return HTML レスポンス用の ModelAndView オブジェクト
-	 */
 	@RequestMapping
 	public ModelAndView error(HttpServletRequest req, ModelAndView mav) {
-
 		// 不正なリクエストは全部404にする
 		mav.setStatus(HttpStatus.NOT_FOUND);
-
-		// ビュー名を指定する
+		// エラーページにフォワードする
 		mav.setViewName("forward:/errorpage");
-
 		return mav;
 	}
 }

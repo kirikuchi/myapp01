@@ -16,6 +16,13 @@
 
 <script type="text/javascript">
 	$(function() {
+		$("#logout").on("click", function() {
+			$("form").attr("action", "/logout");
+			$("form").attr("method", "post");
+			$("form").attr("target", "_self");
+			$("form").submit();
+		});
+		
 		$("#back").on("click", function() {
 			$("form").attr("action", "/list/back");
 			$("form").attr("method", "post");
@@ -39,6 +46,11 @@
 </head>
 <body>
 <form:form method="post" modelAttribute="employeeEditForm" autocomplete="off">
+	<nav class="navbar navbar-dark bg-primary">
+		<div class="p-2 bg-primary text-white">社員管理システム / 社員情報更新</div>
+		<input type="button" id="logout" value="ログアウト" class="btn btn-primary" />
+	</nav>
+	
 	<c:if test="${errors.size() gt 0}">
 		<table class="table table-bordered">
 			<tr>
@@ -56,9 +68,13 @@
 		</table>
 	</c:if>
 	<br>
-	<table class="table table-bordered" style="width:400px;border:1px solid #aaa;">
+
+<div class="container" style="display: table;height:300px;width:500px;">
+<div class="container" style="display: table-cell;vertical-align: middle;">
+	
+	<table class="table table-bordered" style="width:500px;border:1px solid #aaa;">
 		<tr>
-			<th class="table-primary" style="width:100px;">
+			<th class="table-primary align-middle text-center" style="width:100px;">
 				<spring:message code="label.empId" />
 			</th>
 			<td style="width:300px;">
@@ -66,7 +82,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th class="table-primary">
+			<th class="table-primary align-middle text-center">
 				<spring:message code="label.lastName" />
 			</th>
 			<td>
@@ -74,7 +90,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th class="table-primary">
+			<th class="table-primary align-middle text-center">
 				<spring:message code="label.fastName" />
 			</th>
 			<td>
@@ -82,7 +98,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th class="table-primary">
+			<th class="table-primary align-middle text-center">
 				<spring:message code="label.lastNameKana" />
 			</th>
 			<td>
@@ -90,7 +106,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th class="table-primary">
+			<th class="table-primary align-middle text-center">
 				<spring:message code="label.fastNameKana" />
 			</th>
 			<td>
@@ -98,7 +114,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th class="table-primary">
+			<th class="table-primary align-middle text-center">
 				<spring:message code="label.gender" />
 			</th>
 			<td>
@@ -111,7 +127,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th class="table-primary">
+			<th class="table-primary align-middle text-center">
 				<spring:message code="label.birthday" />
 			</th>
 			<td>
@@ -119,7 +135,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th class="table-primary">
+			<th class="table-primary align-middle text-center">
 				<spring:message code="label.bloodType" />
 			</th>
 			<td>
@@ -131,10 +147,17 @@
 				</form:select>
 			</td>
 		</tr>
+		<tr>
+			<td class="align-middle text-end" colspan="2">
+				<input type="button" id="back" value="戻る" class="btn btn-secondary" />
+				<input type="button" id="update" value="更新" class="btn btn-primary" />
+			</td>
+		</tr>
 	</table>
 
-	<input type="button" id="back" value="戻る" class="btn btn-primary" />
-	<input type="button" id="update" value="更新" class="btn btn-success" />
+</div>
+</div>
+
 </form:form>
 
 </body>
