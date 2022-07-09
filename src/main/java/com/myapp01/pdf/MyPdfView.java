@@ -21,10 +21,9 @@ public class MyPdfView extends AbstractPdfView {
     protected void buildPdfDocument(Map<String, Object> model, Document doc, PdfWriter writer,
             HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-    	String currentPath = this.getClass().getResource(".").toString();
-    	System.out.println(currentPath);
+    	String currentPath = this.getClass().getClassLoader().getResource(".").toString();
     	currentPath = currentPath.replaceAll("file:", "");
-    	System.out.println(currentPath);
+    	currentPath += "com/myapp01/pdf/";
     	
       final String fontFile = currentPath + "ipaexg.ttf";
       BaseFont cnFont = BaseFont.createFont(fontFile, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
