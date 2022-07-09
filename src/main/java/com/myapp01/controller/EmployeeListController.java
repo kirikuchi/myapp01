@@ -1,14 +1,8 @@
 package com.myapp01.controller;
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +12,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.myapp01.form.EmployeeListForm;
 import com.myapp01.pdf.MyPdfView;
@@ -62,46 +55,9 @@ public class EmployeeListController {
 
 	@PostMapping("/list/download")
 	private MyPdfView download(MyPdfView mav) {
-//		File file = new File(
-//				"C:\\home\\software\\sts-4.15.1.RELEASE\\myapp01\\src\\main\\resources\\static\\temp\\hyoshi.pdf");
-//
-//		BufferedInputStream input = null;
-//		OutputStream out = null;
-//		try {
-//      response.setContentType("application/pdf");
-//      response.setHeader("Content-Disposition", "inline;");
-//			input = new BufferedInputStream(new FileInputStream(file));
-//			out = response.getOutputStream();
-//			byte[] bytes = new byte[1024];
-//			int read = 0;
-//			while ((read = input.read(bytes, 0, bytes.length)) != -1) {
-//				out.write(bytes, 0, read);
-//			}
-//			out.flush();
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		} finally {
-//			if (input != null) {
-//				try {
-//					input.close();
-//				} catch (IOException e) {
-//					System.err.println(e);
-//				}
-//			}
-//			if (out != null) {
-//				try {
-//					out.close();
-//				} catch (IOException e) {
-//					System.err.println(e);
-//				}
-//			}
-//		}
-//		return null;
-		
-		List<String> words = new ArrayList<>();
-		words.add("漢字");
-		words.add("①キロ");
-		mav.addStaticAttribute("wordList", words);
+		EmployeeListForm employeeListForm = new EmployeeListForm();
+		employeeListService.search(employeeListForm);
+		mav.addStaticAttribute("employeeList", employeeListForm.getEmployeeList());
 		return mav;
 		
 	}
