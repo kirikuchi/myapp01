@@ -2,15 +2,26 @@ package com.myapp01.entity;
 
 import java.io.Serializable;
 
+/**
+ * 社員情報エンティティ
+ */
 public class EmployeeEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
+	// 社員ID
 	private String empId;
+	// 姓
 	private String lastName;
-	private String fastName;
+	// 名
+	private String firstName;
+	// 姓（カナ）
 	private String lastNameKana;
-	private String fastNameKana;
+	// 名（カナ）
+	private String firstNameKana;
+	// 性別
 	private String gender;
+	// 生年月日
 	private String birthday;
+	// 血液型
 	private String bloodType;
 	
 	public String getEmpId() {
@@ -25,11 +36,11 @@ public class EmployeeEntity implements Serializable {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public String getFastName() {
-		return fastName;
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setFastName(String fastName) {
-		this.fastName = fastName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 	public String getLastNameKana() {
 		return lastNameKana;
@@ -37,11 +48,11 @@ public class EmployeeEntity implements Serializable {
 	public void setLastNameKana(String lastNameKana) {
 		this.lastNameKana = lastNameKana;
 	}
-	public String getFastNameKana() {
-		return fastNameKana;
+	public String getFirstNameKana() {
+		return firstNameKana;
 	}
-	public void setFastNameKana(String fastNameKana) {
-		this.fastNameKana = fastNameKana;
+	public void setFirstNameKana(String firstNameKana) {
+		this.firstNameKana = firstNameKana;
 	}
 	public String getGender() {
 		return gender;

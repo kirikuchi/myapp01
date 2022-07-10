@@ -10,9 +10,13 @@ import com.myapp01.entity.LoginUserDetails;
 import com.myapp01.entity.LoginUserEntity;
 import com.myapp01.mapper.LoginUserMapper;
 
+/**
+ * ログインユーザサービス
+ */
 @Service
 public class LoginUserService implements UserDetailsService {
 
+	// ログインユーザマッパー
 	@Autowired
 	private LoginUserMapper loginUserMapper;
 
@@ -21,6 +25,9 @@ public class LoginUserService implements UserDetailsService {
 		this.loginUserMapper = loginUserMapper;
 	}
 
+	/**
+	 * ログインユーザ検索
+	 */
 	@Override
 	public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
 		LoginUserEntity loginUserEntity = loginUserMapper.findByUserId(userId);

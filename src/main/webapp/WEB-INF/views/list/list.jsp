@@ -5,25 +5,10 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <head>
-
+<meta charset="utf-8">
+<title>社員情報検索</title>
 <style type="text/css">
 <!--
-table.st-tbl1 {
-	text-align: left;
-	position: relative;
-	border-collapse: collapse; 
-	width:100%;
-}
-table.st-tbl1 th,
-table.st-tbl1 td{
-	padding: 1rem;
-	border: solid 1px #ddd;
-}
-table.st-tbl1 th {
-	background: white;
-	position: sticky;
-	top: 0;
-}
 -->
 </style>
 
@@ -118,10 +103,10 @@ table.st-tbl1 th {
 				<form:input path="lastName" class="form-control" style="width:100px;" maxlength="5"/>
 			</td>
 			<th class="table-primary align-middle text-center">
-				<spring:message code="label.fastName" />
+				<spring:message code="label.firstName" />
 			</th>
 			<td>
-				<form:input path="fastName" class="form-control" style="width:100px;" maxlength="5"/>
+				<form:input path="firstName" class="form-control" style="width:100px;" maxlength="5"/>
 			</td>
 			<th class="table-primary align-middle text-center">
 				<spring:message code="label.lastNameKana" />
@@ -130,10 +115,10 @@ table.st-tbl1 th {
 				<form:input path="lastNameKana" class="form-control" style="width:100px;" maxlength="5"/>
 			</td>
 			<th class="table-primary align-middle text-center">
-				<spring:message code="label.fastNameKana" />
+				<spring:message code="label.firstNameKana" />
 			</th>
 			<td>
-				<form:input path="fastNameKana" class="form-control" style="width:100px;" maxlength="5"/>
+				<form:input path="firstNameKana" class="form-control" style="width:100px;" maxlength="5"/>
 			</td>
 		</tr>
 		<tr>
@@ -155,7 +140,7 @@ table.st-tbl1 th {
 				<form:input path="birthday" class="form-control" id="birthday" style="width:115px;" maxlength="5"/>
 			</td>
 			<th class="table-primary align-middle text-center">
-				<spring:message code="label.birthday" />
+				<spring:message code="label.bloodType" />
 			</th>
 			<td colspan="3">
 				<form:select path="bloodType" class="form-select" style="width:100px;">
@@ -182,9 +167,9 @@ table.st-tbl1 th {
 			<tr class="table-primary">
 				<th class="align-middle text-center" style="width:100px;"><spring:message code="label.empId" /></th>
 				<th class="align-middle text-center" style="width:100px;"><spring:message code="label.lastName" /></th>
-				<th class="align-middle text-center" style="width:100px;"><spring:message code="label.fastName" /></th>
+				<th class="align-middle text-center" style="width:100px;"><spring:message code="label.firstName" /></th>
 				<th class="align-middle text-center" style="width:100px;"><spring:message code="label.lastNameKana" /></th>
-				<th class="align-middle text-center" style="width:100px;"><spring:message code="label.fastNameKana" /></th>
+				<th class="align-middle text-center" style="width:100px;"><spring:message code="label.firstNameKana" /></th>
 				<th class="align-middle text-center" style="width:100px;"><spring:message code="label.gender" /></th>
 				<th class="align-middle text-center" style="width:100px;"><spring:message code="label.birthday" /></th>
 				<th class="align-middle text-center" style="width:100px;"><spring:message code="label.bloodType" /></th>
@@ -192,15 +177,15 @@ table.st-tbl1 th {
 			</tr>
 		</thead>
 	</table>
-<div id="list" style="height:350px;width:918px;overflow-y:scroll;border: 0;position: relative;top:-18px;">
+<div id="list" style="height:385px;width:918px;overflow-y:scroll;border: 0;position: relative;top:-18px;">
 	<table class="table table-bordered table-striped" style="width:900px;">
 		<c:forEach var="employee" items="${employeeListForm.employeeList}" varStatus="status">
 			<tr>
 				<td class="align-middle text-center" style="width:100px;">${employee.empId}</td>
 				<td class="align-middle text-center" style="width:100px;">${employee.lastName}</td>
-				<td class="align-middle text-center" style="width:100px;">${employee.fastName}</td>
+				<td class="align-middle text-center" style="width:100px;">${employee.firstName}</td>
 				<td class="align-middle text-center" style="width:100px;">${employee.lastNameKana}</td>
-				<td class="align-middle text-center" style="width:100px;">${employee.fastNameKana}</td>
+				<td class="align-middle text-center" style="width:100px;">${employee.firstNameKana}</td>
 				<td class="align-middle text-center" style="width:100px;">${employee.gender}</td>
 				<td class="align-middle text-center" style="width:100px;">${employee.birthday}</td>
 				<td class="align-middle text-center" style="width:100px;">${employee.bloodType}</td>

@@ -11,12 +11,20 @@ import com.myapp01.entity.EmployeeEntity;
 import com.myapp01.form.EmployeeListForm;
 import com.myapp01.mapper.EmployeeMapper;
 
+/**
+ * 社員情報検索サービス
+ */
 @Service
 @Transactional
 public class EmployeeListService {
+	// 社員情報マッパー
 	@Autowired
 	EmployeeMapper employeeMapper;
 	
+	/**
+	 * 社員情報検索
+	 * @param employeeListForm 社員情報検索フォーム
+	 */
 	public void search (EmployeeListForm employeeListForm) {
 		EmployeeEntity entity = new EmployeeEntity();
 		BeanUtils.copyProperties(employeeListForm, entity);

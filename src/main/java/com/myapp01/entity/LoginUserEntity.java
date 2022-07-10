@@ -2,10 +2,16 @@ package com.myapp01.entity;
 
 import java.io.Serializable;
 
+/**
+ * ログインユーザエンティティ
+ */
 public class LoginUserEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
+	// ユーザID
 	private String userId;
+	// パスワード
 	private String password;
+	// ユーザ名
 	private String name;
 	
 	public String getUserId() {

@@ -4,17 +4,30 @@ import java.io.Serializable;
 import java.util.List;
 import com.myapp01.entity.EmployeeEntity;
 
+/**
+ * 社員情報検索フォーム
+ */
 public class EmployeeListForm implements Serializable {
 	private static final long serialVersionUID = 1L;
+	// 社員ID
 	private String empId;
+	// 姓
 	private String lastName;
-	private String fastName;
+	// 名
+	private String firstName;
+	// 姓（カナ）
 	private String lastNameKana;
-	private String fastNameKana;
+	// 名（カナ）
+	private String firstNameKana;
+	// 性別
 	private String gender;
+	// 生年月日
 	private String birthday;
+	// 血液型
 	private String bloodType;
+	// 検索結果のスクロールバーの位置
 	private String hdnScrollTop;
+	// 社員情報の検索結果
 	private List<EmployeeEntity>employeeList;
 
 	public String getEmpId() {
@@ -29,11 +42,11 @@ public class EmployeeListForm implements Serializable {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public String getFastName() {
-		return fastName;
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setFastName(String fastName) {
-		this.fastName = fastName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 	public String getLastNameKana() {
 		return lastNameKana;
@@ -41,11 +54,11 @@ public class EmployeeListForm implements Serializable {
 	public void setLastNameKana(String lastNameKana) {
 		this.lastNameKana = lastNameKana;
 	}
-	public String getFastNameKana() {
-		return fastNameKana;
+	public String getFirstNameKana() {
+		return firstNameKana;
 	}
-	public void setFastNameKana(String fastNameKana) {
-		this.fastNameKana = fastNameKana;
+	public void setFirstNameKana(String firstNameKana) {
+		this.firstNameKana = firstNameKana;
 	}
 	public String getGender() {
 		return gender;

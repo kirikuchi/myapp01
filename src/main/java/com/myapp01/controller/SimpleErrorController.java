@@ -8,9 +8,19 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * エラーコントローラ
+ * HTTP 404, 405等の発生時に呼ばれる
+ */
 @Controller
-@RequestMapping("/error") // エラーページへのマッピング
+@RequestMapping("/error")
 public class SimpleErrorController implements ErrorController {
+	/**
+	 * エラー時のアクション
+	 * @param req リクエスト
+	 * @param mav モデルビュー
+	 * @return モデルビュー
+	 */
 	@RequestMapping
 	public ModelAndView error(HttpServletRequest req, ModelAndView mav) {
 		// 不正なリクエストは全部404にする

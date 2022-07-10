@@ -5,6 +5,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <head>
+<meta charset="utf-8">
+<title>ログイン</title>
 <style type="text/css">
 <!--
 -->
@@ -25,11 +27,11 @@
 		<div class="p-2 bg-primary text-white">社員管理システム / ログイン</div>
 	</nav>
 	
-	<c:if test="${not empty ErrorMessage}">
+	<c:if test="${not empty errorMessage}">
 		<table class="table table-bordered">
 			<tr>
 				<th class="table-danger align-middle text-center">
-					${ErrorMessage}
+					${errorMessage}
 				</th>
 			</tr>
 		</table>

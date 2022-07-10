@@ -5,8 +5,12 @@ import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+/**
+ * ログインユーザ情報
+ */
 public class LoginUserDetails implements UserDetails {
 	private static final long serialVersionUID = 1L;
+	// ログインユーザエンティティ
 	private final LoginUserEntity loginUserEntity;
 
 	public LoginUserDetails(LoginUserEntity loginUserEntity) {

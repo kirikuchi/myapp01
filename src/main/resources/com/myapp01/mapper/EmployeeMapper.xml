@@ -17,14 +17,14 @@
 				<if test="lastName != null and lastName != ''">
 					and last_name like CONCAT('%', #{lastName}, '%')
 				</if>
-				<if test="fastName != null and fastName != ''">
-					and fast_name like CONCAT('%', #{fastName}, '%')
+				<if test="firstName != null and firstName != ''">
+					and first_name like CONCAT('%', #{firstName}, '%')
 				</if>
 				<if test="lastNameKana != null and lastNameKana != ''">
 					and last_name_kana like CONCAT('%', #{lastNameKana}, '%')
 				</if>
-				<if test="fastNameKana != null and fastNameKana != ''">
-					and fast_name_kana like CONCAT('%', #{fastNameKana}, '%')
+				<if test="firstNameKana != null and firstNameKana != ''">
+					and first_name_kana like CONCAT('%', #{firstNameKana}, '%')
 				</if>
 				<if test="gender != null and gender != ''">
 					and gender = #{gender}
@@ -54,14 +54,14 @@
 		resultType="com.myapp01.entity.EmployeeEntity" flushCache="true">
 		update employee
 		set
-			 EMP_ID = #{empId}
-			,LAST_NAME = #{lastName}
-			,FAST_NAME = #{fastName}
-			,LAST_NAME_KANA = #{lastNameKana}
-			,FAST_NAME_KANA = #{fastNameKana}
-			,GENDER = #{gender}
-			,BIRTHDAY = #{birthday}
-			,BLOOD_TYPE = #{bloodType}
+			 emp_id = #{empId}
+			,last_name = #{lastName}
+			,first_name = #{firstName}
+			,last_name_kana = #{lastNameKana}
+			,first_name_kana = #{firstNameKana}
+			,gender = #{gender}
+			,birthday = #{birthday}
+			,blood_type = #{bloodType}
 		where emp_id = #{empId}
 	</select>
 </mapper>

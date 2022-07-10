@@ -4,34 +4,42 @@ import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.validator.constraints.Length;
 
-import lombok.Data;
-
-@Data
+/**
+ * 社員情報更新フォーム
+ */
 public class EmployeeEditForm {
+	// 社員ID
 	private String empId;
 	
+	// 姓
 	@NotEmpty(message = "{err.empId.empty}")
 	@Length(max=5, message = "{err.lastName.length}")
 	private String lastName;
 	
+	// 名
 	@NotEmpty(message = "{err.lastName.empty}")
-	@Length(max=5, message = "{err.fastName.length}")
-	private String fastName;
+	@Length(max=5, message = "{err.firstName.length}")
+	private String firstName;
 	
+	// 姓（カナ）
 	@NotEmpty(message = "{err.lastNameKana.empty}")
 	@Length(max=10, message = "{err.lastNameKana.length}")
 	private String lastNameKana;
 	
-	@NotEmpty(message = "{err.fastNameKana.empty}")
-	@Length(max=10, message = "{err.fastNameKana.length}")
-	private String fastNameKana;
+	// 名（カナ）
+	@NotEmpty(message = "{err.firstNameKana.empty}")
+	@Length(max=10, message = "{err.firstNameKana.length}")
+	private String firstNameKana;
 	
+	// 性別
 	@NotEmpty(message = "{err.gender.empty}")
 	private String gender;
 	
+	// 生年月日
 	@NotEmpty(message = "{err.birthday.empty}")
 	private String birthday;
 	
+	// 血液型
 	@NotEmpty(message = "{err.bloodType.empty}")
 	private String bloodType;
 	
@@ -47,11 +55,11 @@ public class EmployeeEditForm {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public String getFastName() {
-		return fastName;
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setFastName(String fastName) {
-		this.fastName = fastName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 	public String getLastNameKana() {
 		return lastNameKana;
@@ -59,11 +67,11 @@ public class EmployeeEditForm {
 	public void setLastNameKana(String lastNameKana) {
 		this.lastNameKana = lastNameKana;
 	}
-	public String getFastNameKana() {
-		return fastNameKana;
+	public String getFirstNameKana() {
+		return firstNameKana;
 	}
-	public void setFastNameKana(String fastNameKana) {
-		this.fastNameKana = fastNameKana;
+	public void setFirstNameKana(String firstNameKana) {
+		this.firstNameKana = firstNameKana;
 	}
 	public String getGender() {
 		return gender;

@@ -5,6 +5,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <head>
+<meta charset="utf-8">
+<title>社員情報更新</title>
 <link rel="stylesheet"
 	href="/css/bootstrap-5.1.3-dist/css/bootstrap.min.css">
 <script src="/css/bootstrap-5.1.3-dist/js/bootstrap.bundle.js"></script>
@@ -91,10 +93,10 @@
 		</tr>
 		<tr>
 			<th class="table-primary align-middle text-center">
-				<spring:message code="label.fastName" />
+				<spring:message code="label.firstName" />
 			</th>
 			<td>
-				<form:input path="fastName" class="form-control" style="width:100px;" maxlength="5"/>
+				<form:input path="firstName" class="form-control" style="width:100px;" maxlength="5"/>
 			</td>
 		</tr>
 		<tr>
@@ -107,10 +109,10 @@
 		</tr>
 		<tr>
 			<th class="table-primary align-middle text-center">
-				<spring:message code="label.fastNameKana" />
+				<spring:message code="label.firstNameKana" />
 			</th>
 			<td>
-				<form:input path="fastNameKana" class="form-control" style="width:100px;" maxlength="5"/>
+				<form:input path="firstNameKana" class="form-control" style="width:100px;" maxlength="5"/>
 			</td>
 		</tr>
 		<tr>
