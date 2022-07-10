@@ -22,7 +22,7 @@
 </script>
 </head>
 <body>
-<form method="post" action="/signin">
+<form method="post" action="/signin" autocomplete="off">
 	<nav class="navbar navbar-dark bg-primary">
 		<div class="p-2 bg-primary text-white">社員管理システム / ログイン</div>
 	</nav>
@@ -46,7 +46,7 @@
 				<spring:message code="label.username" />
 			</th>
 			<td style="width:300px;">
-				<input type="text" name="username" value="001">
+				<input type="text" class="form-control" style="width:100px;" name="username" value="001">
 			</td>
 		</tr>
 		<tr>
@@ -54,7 +54,7 @@
 				<spring:message code="label.password" />
 			</th>
 			<td>
-				<input type="password" name="password" value="001pass">
+				<input type="password" class="form-control" style="width:100px;" name="password" value="001pass">
 			</td>
 		</tr>
 		<tr>
