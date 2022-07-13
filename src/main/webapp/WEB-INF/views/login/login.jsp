@@ -46,7 +46,7 @@
 				<spring:message code="label.username" />
 			</th>
 			<td style="width:300px;">
-				<input type="text" class="form-control" style="width:100px;" name="username" value="001">
+				<input type="text" class="form-control" style="width:100px;" name="username">
 			</td>
 		</tr>
 		<tr>
@@ -54,7 +54,7 @@
 				<spring:message code="label.password" />
 			</th>
 			<td>
-				<input type="password" class="form-control" style="width:100px;" name="password" value="001pass">
+				<input type="password" class="form-control" style="width:100px;" name="password">
 			</td>
 		</tr>
 		<tr>
