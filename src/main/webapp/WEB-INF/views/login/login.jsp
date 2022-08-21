@@ -13,16 +13,16 @@
 </style>
 
 <link rel="stylesheet"
-	href="/css/bootstrap-5.1.3-dist/css/bootstrap.min.css">
-<script src="/css/bootstrap-5.1.3-dist/js/bootstrap.bundle.js"></script>
-<script src="/js/jquery-3.6.0.min.js"></script>
+	href="<%=request.getContextPath()%>/css/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+<script src="<%=request.getContextPath()%>/css/bootstrap-5.1.3-dist/js/bootstrap.bundle.js"></script>
+<script src="<%=request.getContextPath()%>/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 	$(function() {
 	});
 </script>
 </head>
 <body>
-<form method="post" action="/signin" autocomplete="off">
+<form method="post" action="<%=request.getContextPath()%>/signin" autocomplete="off">
 	<nav class="navbar navbar-dark bg-primary">
 		<div class="p-2 bg-primary text-white">社員管理システム / ログイン</div>
 	</nav>
@@ -46,7 +46,7 @@
 				<spring:message code="label.username" />
 			</th>
 			<td style="width:300px;">
-				<input type="text" class="form-control" style="width:100px;" name="username">
+				<input type="text" class="form-control" style="width:100px;" name="username" value="001">
 			</td>
 		</tr>
 		<tr>
@@ -54,7 +54,7 @@
 				<spring:message code="label.password" />
 			</th>
 			<td>
-				<input type="password" class="form-control" style="width:100px;" name="password">
+				<input type="password" class="form-control" style="width:100px;" name="password" value="001pass">
 			</td>
 		</tr>
 		<tr>
